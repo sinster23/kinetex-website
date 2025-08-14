@@ -1,14 +1,21 @@
 import { useState } from 'react'
 import Home from './sections/Home'
+import About from './sections/About' // Import your About component
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <section id="hero" className="h-screen">
-      <Home />
-    </section>
+    <div className="App">
+      {/* Hero Section */}
+      <section id="hero" className="min-h-screen">
+        <Home />
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="min-h-screen">
+        <About />
+      </section>
+    </div>
   );
 }
 

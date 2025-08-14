@@ -519,12 +519,13 @@ const KietexHome = () => {
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-orange-900 relative overflow-hidden">
       {/* Navigation with Framer Motion */}
       <motion.nav 
-        className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-black/90 backdrop-blur-md border-b border-orange-500/30"
+        className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-transparent backdrop-blur-md "
         variants={navVariants}
         initial="initial"
         animate="animate"
       >
         <div className="flex justify-between items-center px-4">
+            <img src='/images.png' className='w-70 h-20 cursor-pointer' />
           <motion.div 
             className="text-3xl font-bold text-white"
             whileHover={{ scale: 1.05, color: "#f97316" }}
@@ -533,7 +534,7 @@ const KietexHome = () => {
             KineTex
           </motion.div>
           <div className='flex space-x-10'>
-            <div className="hidden md:flex space-x-8 text-gray-300">
+            <div className="hidden md:flex space-x-8 text-gray-300 mr-15">
               {['Features', 'About', 'Resources', 'Contact', 'Events'].map((item, index) => (
                 <motion.button
                   key={item}
@@ -586,6 +587,14 @@ const KietexHome = () => {
           initial="initial"
           animate="animate"
         >
+            <motion.div 
+            className="flex gap-3 text-5xl font-bold text-white"
+            whileHover={{ color: "#f97316" }}
+            transition={{ duration: 0.2 }}
+          >
+            <img src='/logo.png' className='w-22 h-18 cursor-pointer' />
+           <span className="mt-2">KineTex</span>
+          </motion.div>
           <motion.h1 
             className="text-6xl md:text-8xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 50 }}
