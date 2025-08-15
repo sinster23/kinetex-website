@@ -624,7 +624,7 @@ const KineTechDomains = () => {
           }}
         >
           <motion.h2
-            className="text-7xl md:text-8xl font-bold text-white mb-8 leading-tight"
+            className="mt-10 text-5xl md:text-6xl font-bold text-white mb-8 leading-tight"
             style={{
               background: "linear-gradient(45deg, #ffffff, #f97316, #3b82f6)",
               backgroundClip: "text",
@@ -639,6 +639,7 @@ const KineTechDomains = () => {
             Our Domains
           </motion.h2>
         </InViewWrapper>
+        
 
         <InViewWrapper
           variants={{
@@ -654,7 +655,7 @@ const KineTechDomains = () => {
           }}
         >
           <motion.p
-            className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Explore our diverse innovation domains where creativity meets
             cutting-edge technology
@@ -699,7 +700,7 @@ const KineTechDomains = () => {
               }}
             >
               <motion.h2
-                className="text-4xl md:text-5xl font-bold text-white mb-4"
+                className="text-2xl md:text-4xl font-bold text-white mb-4"
                 whileHover={{
                   scale: 1.02,
                   transition: { type: "spring", stiffness: 400, damping: 17 },
@@ -766,7 +767,7 @@ const KineTechDomains = () => {
           }}
         >
           <motion.h3
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-2xl md:text-4xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -784,7 +785,7 @@ const KineTechDomains = () => {
             Ready to Join a Domain?
           </motion.h3>
           <motion.p
-            className="text-gray-300 md:text-2xl mb-8 mx-auto"
+            className="text-gray-300 md:text-xl mb-8 mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}

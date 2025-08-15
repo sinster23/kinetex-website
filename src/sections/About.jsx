@@ -292,7 +292,7 @@ const About = () => {
           </motion.div>
           
           <motion.h2 
-            className="text-7xl md:text-8xl font-bold text-white mb-8 leading-tight"
+            className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight"
             style={{
               background: "linear-gradient(45deg, #ffffff, #f97316, #3b82f6)",
               backgroundClip: "text",
@@ -314,15 +314,10 @@ const About = () => {
             transition={{ duration: 1.2, delay: 0.5 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-blue-500 to-purple-500 rounded-full" />
-            <motion.div 
-              className="absolute inset-0 bg-white/30 rounded-full"
-              animate={{ x: ["-100%", "100%"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            />
           </motion.div>
           
           <motion.p 
-            className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -400,26 +395,13 @@ const About = () => {
                         transition={{ duration: 0.3 }}
                       >
                         {/* Main Card */}
-                        <div className="bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-12 h-full relative overflow-hidden shadow-2xl">
-                          {/* Card Background with Gradient */}
-                          <div 
-                            className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-5 rounded-3xl`}
-                          />
-                          
-                          {/* Animated Border - only for active card */}
-                          {isActive && (
-                            <motion.div
-                              className="absolute inset-0 rounded-3xl"
-                              style={{
-                                background: `linear-gradient(45deg, ${card.accentColor}40, transparent, ${card.accentColor}40)`,
-                                padding: '2px'
-                              }}
-                              animate={{ rotate: 360 }}
-                              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                            >
-                              <div className="w-full h-full bg-gray-900/95 rounded-3xl" />
-                            </motion.div>
-                          )}
+                        <div 
+                          className={`bg-gray-900/95 backdrop-blur-xl rounded-3xl p-12 h-full relative overflow-hidden transition-all duration-500 ${
+                            isActive 
+                              ? 'border-l-4 border-l-orange-500' 
+                              : 'border-l border-l-gray-700/50'
+                          }`}
+                        >
 
                           {/* Content Container */}
                           <div className="relative z-10 flex flex-col h-full">
@@ -486,39 +468,6 @@ const About = () => {
                               </motion.div>
                             )}
                           </div>
-
-                          {/* Decorative Elements - only for active card */}
-                          {isActive && (
-                            <>
-                              <motion.div
-                                className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-10"
-                                style={{ backgroundColor: card.accentColor }}
-                                animate={{ 
-                                  scale: [1, 1.2, 1],
-                                  rotate: [0, 180, 360]
-                                }}
-                                transition={{ 
-                                  duration: 12,
-                                  repeat: Infinity,
-                                  ease: "linear"
-                                }}
-                              />
-                              
-                              <motion.div
-                                className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full opacity-10"
-                                style={{ backgroundColor: card.accentColor }}
-                                animate={{ 
-                                  scale: [1, 0.8, 1],
-                                  rotate: [360, 180, 0]
-                                }}
-                                transition={{ 
-                                  duration: 8,
-                                  repeat: Infinity,
-                                  ease: "linear"
-                                }}
-                              />
-                            </>
-                          )}
                         </div>
                       </motion.div>
                     </motion.div>
