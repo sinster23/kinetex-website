@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Home from './sections/Home'
-import About from './sections/About' // Import your About component
+import About from './sections/About' 
+import Domain from './sections/Domain'
 import './App.css'
 
 function App() {
@@ -14,6 +15,12 @@ function App() {
       {/* About Section */}
       <section id="about" className="min-h-screen">
         <About />
+      </section>
+
+      
+      {/* Domain Section */}
+      <section id="about" className="min-h-screen">
+        <Domain />
       </section>
     </div>
   );

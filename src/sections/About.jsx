@@ -304,7 +304,7 @@ const About = () => {
               filter: "brightness(1.2)"
             }}
           >
-            About Kinetix Lab
+            About Kinetex Lab
           </motion.h2>
           
           <motion.div 
@@ -332,7 +332,7 @@ const About = () => {
         </motion.div>
 
         {/* Enhanced Stacked Cards Container */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-10xl mx-auto">
           {/* Side-by-Side Cards Display Area with Navigation */}
           <div className="relative mb-16">
             {/* Left Navigation Button */}
