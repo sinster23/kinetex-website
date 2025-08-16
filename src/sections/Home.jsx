@@ -641,9 +641,9 @@ const KietexHome = () => {
         animate="animate"
       >
         <div className="flex justify-between items-center px-4">
-          <img src="/images.png" className="w-70 h-20 cursor-pointer" />
+          <img src="/images.png" className="w-50 h-15 cursor-pointer" />
           <motion.div
-            className="text-3xl font-bold text-white"
+            className="text-2xl font-bold text-white"
             whileHover={{ scale: 1.05, color: "#f97316" }}
             transition={{ duration: 0.2 }}
           >
@@ -709,15 +709,15 @@ const KietexHome = () => {
           animate="animate"
         >
           <motion.div
-            className="flex gap-3 text-5xl font-bold text-white"
+            className="flex gap-3 text-4xl font-bold text-white"
             whileHover={{ color: "#f97316" }}
             transition={{ duration: 0.2 }}
           >
-            <img src="/logo.png" className="w-22 h-18 cursor-pointer" />
+            <img src="/logo.png" className="w-18 h-14 cursor-pointer" />
             <span className="mt-2">KineTex</span>
           </motion.div>
           <motion.h1
-            className="text-6xl md:text-8xl font-bold text-white mb-6"
+            className="text-5xl md:text-7xl font-bold text-white mb-2"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -742,7 +742,7 @@ const KietexHome = () => {
           </motion.h1>
 
           <motion.p
-            className="text-2xl text-gray-300 mb-8 leading-relaxed"
+            className="text-lg text-gray-300 mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -758,7 +758,7 @@ const KietexHome = () => {
             animate="animate"
           >
             <motion.button
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg text-md font-semibold"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -766,7 +766,7 @@ const KietexHome = () => {
               Get Started
             </motion.button>
             <motion.button
-              className="border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300"
+              className="border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl text-md font-semibold transition-colors duration-300"
               whileHover={{
                 scale: 1.05,
                 y: -2,

@@ -151,39 +151,6 @@ const KineTechDomains = () => {
     },
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 80,
-      scale: 0.9,
-      rotateX: 15,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 20,
-        duration: 0.8,
-      },
-    },
-  };
-
   // Scroll-triggered animation variants
   const scrollVariants = {
     hidden: {
@@ -223,7 +190,7 @@ const KineTechDomains = () => {
 
   const TabToggle = () => (
     <InViewWrapper
-      className="flex justify-center mb-16"
+      className="flex justify-center mb-10"
       variants={{
         hidden: { opacity: 0, y: -30, scale: 0.9 },
         visible: { 
@@ -419,7 +386,7 @@ const KineTechDomains = () => {
               }}
             >
               <motion.span
-                className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium"
+                className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-[10px] font-medium"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "rgba(255, 255, 255, 0.3)",
@@ -432,7 +399,7 @@ const KineTechDomains = () => {
                 {domain.tags.slice(0, 2).map((tag, i) => (
                   <motion.span
                     key={i}
-                    className="px-2 py-1 bg-black/20 backdrop-blur-sm rounded text-xs"
+                    className="px-2 py-1 bg-black/20 backdrop-blur-sm rounded text-[10px]"
                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
                     transition={{ 
@@ -457,7 +424,7 @@ const KineTechDomains = () => {
           <div className="space-y-4">
             <div>
               <motion.h3
-                className="text-2xl font-bold text-white mb-1"
+                className="text-xl font-bold text-white mb-1"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ 
@@ -485,7 +452,7 @@ const KineTechDomains = () => {
             </div>
 
             <motion.p
-              className="text-white/90 text-sm leading-relaxed"
+              className="text-white/90 text-[12px] leading-relaxed"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: index * 0.1 + 0.9, duration: 0.6 }}
@@ -506,7 +473,7 @@ const KineTechDomains = () => {
                 damping: 20
               }}
             >
-              <div className="flex space-x-4 text-sm">
+              <div className="flex space-x-4 text-xs">
                 <motion.div
                   className="flex items-center space-x-1"
                   whileHover={{ scale: 1.05 }}
@@ -604,7 +571,7 @@ const KineTechDomains = () => {
 
       {/* Header with parallax effect */}
       <motion.div
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-6 relative z-10"
         style={{ y: headerY, opacity: fadeOpacity }}
       >
         <InViewWrapper
@@ -623,8 +590,8 @@ const KineTechDomains = () => {
             }
           }}
         >
-          <motion.h2
-            className="mt-10 text-5xl md:text-6xl font-bold text-white mb-8 leading-tight"
+          <motion.h4
+            className="mt-10 text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
             style={{
               background: "linear-gradient(45deg, #ffffff, #f97316, #3b82f6)",
               backgroundClip: "text",
@@ -637,7 +604,7 @@ const KineTechDomains = () => {
             }}
           >
             Our Domains
-          </motion.h2>
+          </motion.h4>
         </InViewWrapper>
         
 
@@ -655,7 +622,7 @@ const KineTechDomains = () => {
           }}
         >
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
             Explore our diverse innovation domains where creativity meets
             cutting-edge technology
@@ -700,7 +667,7 @@ const KineTechDomains = () => {
               }}
             >
               <motion.h2
-                className="text-2xl md:text-4xl font-bold text-white mb-4"
+                className="text-xl md:text-3xl font-bold text-white mb-4"
                 whileHover={{
                   scale: 1.02,
                   transition: { type: "spring", stiffness: 400, damping: 17 },
@@ -711,7 +678,7 @@ const KineTechDomains = () => {
                   : "Support & Creative Domains"}
               </motion.h2>
               <motion.p
-                className="text-gray-400 text-lg"
+                className="text-gray-400 text-md"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
@@ -766,8 +733,8 @@ const KineTechDomains = () => {
             },
           }}
         >
-          <motion.h3
-            className="text-2xl md:text-4xl font-bold text-white mb-6"
+          <motion.h2
+            className="text-xl md:text-3xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -783,9 +750,9 @@ const KineTechDomains = () => {
             }}
           >
             Ready to Join a Domain?
-          </motion.h3>
+          </motion.h2>
           <motion.p
-            className="text-gray-300 md:text-xl mb-8 mx-auto"
+            className="text-gray-300 md:text-md mb-8 mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -808,7 +775,7 @@ const KineTechDomains = () => {
             viewport={{ once: true }}
           >
             <motion.button
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl text-lg font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl text-md font-semibold"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(249, 115, 22, 0.5)",
@@ -823,7 +790,7 @@ const KineTechDomains = () => {
               Apply Now
             </motion.button>
             <motion.button
-              className="border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300"
+              className="border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl text-md font-semibold transition-colors duration-300"
               whileHover={{
                 scale: 1.05,
                 y: -2,

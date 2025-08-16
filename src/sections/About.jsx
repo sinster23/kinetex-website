@@ -282,17 +282,9 @@ const About = () => {
           className="text-center mb-20"
           variants={titleVariants}
         >
-          <motion.div 
-            className="inline-block mb-4 px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
-          >
-            <span className="text-orange-400 text-sm font-semibold tracking-wide uppercase">
-              Discover Our Journey
-            </span>
-          </motion.div>
           
           <motion.h2 
-            className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight"
+            className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight"
             style={{
               background: "linear-gradient(45deg, #ffffff, #f97316, #3b82f6)",
               backgroundClip: "text",
@@ -317,7 +309,7 @@ const About = () => {
           </motion.div>
           
           <motion.p 
-            className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -327,7 +319,7 @@ const About = () => {
         </motion.div>
 
         {/* Enhanced Stacked Cards Container */}
-        <div className="max-w-10xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Side-by-Side Cards Display Area with Navigation */}
           <div className="relative mb-16">
             {/* Left Navigation Button */}
@@ -363,7 +355,7 @@ const About = () => {
                   return (
                     <motion.div
                       key={`${card.id}-${index}`}
-                      className="absolute w-full max-w-2xl cursor-pointer"
+                      className="absolute w-full max-w-xl cursor-pointer"
                       style={{ 
                         transformStyle: 'preserve-3d',
                         zIndex: isActive ? 50 : 50 - Math.abs(offset)
@@ -420,18 +412,18 @@ const About = () => {
                             </div>
 
                             {/* Question */}
-                            <motion.h3 
-                              className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+                            <motion.h4 
+                              className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight"
                               initial={{ opacity: 0, y: 30 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.6, delay: 0.3 }}
                             >
                               {card.question}
-                            </motion.h3>
+                            </motion.h4>
 
                             {/* Answer */}
                             <motion.p 
-                              className="text-xl text-gray-300 leading-relaxed mb-8 flex-grow"
+                              className="text-md text-gray-300 leading-relaxed mb-6 flex-grow"
                               initial={{ opacity: 0, y: 30 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.6, delay: 0.4 }}
@@ -455,7 +447,7 @@ const About = () => {
                                     whileHover={{ scale: 1.1, y: -5 }}
                                   >
                                     <div 
-                                      className="text-2xl font-bold mb-1"
+                                      className="text-xl font-bold mb-1"
                                       style={{ color: card.accentColor }}
                                     >
                                       {value}
@@ -483,7 +475,7 @@ const About = () => {
               <motion.button
                 key={index}
                 onClick={() => handleCardChange(index)}
-                className={`w-3 h-3 rounded-full border border-white/20 transition-all duration-300 ${
+                className={`w-2 h-2 rounded-full border border-white/20 transition-all duration-300 ${
                   index === activeCard 
                     ? 'bg-orange-500 shadow-lg shadow-orange-500/50' 
                     : 'bg-white/20 hover:bg-white/40'
