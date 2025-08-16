@@ -714,7 +714,7 @@ const KietexHome = () => {
             transition={{ duration: 0.2 }}
           >
             <img src="/logo.png" className="w-18 h-14 cursor-pointer" />
-            <span className="mt-2">KineTex</span>
+            <span className="mt-2">hello</span>
           </motion.div>
           <motion.h1
             className="text-5xl md:text-7xl font-bold text-white mb-2"
