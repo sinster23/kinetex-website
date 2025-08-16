@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Home from './sections/Home'
 import About from './sections/About' 
 import Domain from './sections/Domain'
+import Resources from './sections/Resource'
 import './App.css'
 
 function App() {
@@ -21,6 +22,11 @@ function App() {
       {/* Domain Section */}
       <section id="about" className="min-h-screen">
         <Domain />
+      </section>
+
+       {/* Resouces Section */}
+      <section id="resources" className="min-h-screen">
+        <Resources />
       </section>
     </div>
   );
