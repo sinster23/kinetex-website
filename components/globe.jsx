@@ -6,6 +6,8 @@ const ParticleGlobe = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
+    if (!mountRef.current) return;
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       60,
@@ -45,36 +47,29 @@ const ParticleGlobe = () => {
     const globe = new THREE.Points(geometry, material);
     scene.add(globe);
 
-    // Orbit Controls (optional)
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
     controls.enablePan = false;
-    controls.enableRotate = false; // We'll handle rotation manually
+    controls.enableRotate = false;
 
-    // Mouse hover interaction
     const mouse = new THREE.Vector2();
-    window.addEventListener("mousemove", (event) => {
+    const handleMouseMove = (event) => {
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
 
-    // Animate
     const animate = () => {
       requestAnimationFrame(animate);
-
-      // Base rotation (constant spin)
-      globe.rotation.y += 0.003; 
-
-      // Small tilt based on mouse
+      globe.rotation.y += 0.003;
       globe.rotation.x += (mouse.y * 0.3 - globe.rotation.x) * 0.05;
       globe.rotation.z += (mouse.x * 0.3 - globe.rotation.z) * 0.05;
-
       renderer.render(scene, camera);
     };
     animate();
 
-    // Handle resize
     const handleResize = () => {
+      if (!mountRef.current) return;
       camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
@@ -82,8 +77,12 @@ const ParticleGlobe = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
     };
   }, []);
 

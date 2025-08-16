@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as THREE from "three";
@@ -18,6 +19,12 @@ const KietexHome = () => {
   // Text animation state
   const [currentText, setCurrentText] = useState(0);
   const textOptions = ["Quantum", "AI", "IoT"];
+
+    const handleSignInClick = (e) => {
+    e.preventDefault();
+    console.log('Sign In button clicked'); // Debug log
+    navigate('/signin');
+  };
 
   // Enhanced planet data with better colors and properties
   const planetData = [
@@ -653,17 +660,23 @@ const KietexHome = () => {
                 )
               )}
             </div>
+
             <div className="flex space-x-4">
-              <motion.button
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-              >
-                Sign In
-              </motion.button>
+              {/* Sign In Button */}
+              <Link to="/signin">
+                <motion.button
+                  className="text-gray-300 hover:text-white transition-colors duration-200 mt-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  Sign In
+                </motion.button>
+              </Link>
+
+              {/* Get Started Button */}
               <motion.button
                 className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-orange-500/25"
                 whileHover={{
@@ -678,6 +691,7 @@ const KietexHome = () => {
                 Get Started
               </motion.button>
             </div>
+
           </div>
         </div>
       </motion.nav>
@@ -700,7 +714,7 @@ const KietexHome = () => {
             transition={{ duration: 0.2 }}
           >
             <img src="/logo.png" className="w-18 h-14 cursor-pointer" />
-            <span className="mt-2">KineTex</span>
+            <span className="mt-2">Kinetex</span>
           </motion.div>
           <motion.h1
             className="text-5xl md:text-7xl font-bold text-white mb-2"
@@ -779,9 +793,8 @@ const KietexHome = () => {
           <div className="text-center">
             <motion.div
               ref={mountRef}
-              className={`w-[500px] h-[500px] relative select-none ${
-                isDragging ? "cursor-grabbing" : "cursor-grab"
-              } transition-all duration-300`}
+              className={`w-[500px] h-[500px] relative select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"
+                } transition-all duration-300`}
               style={{
                 filter: "drop-shadow(0 0 60px rgba(255, 165, 0, 0.4))",
               }}
