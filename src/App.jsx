@@ -1,29 +1,52 @@
-import { useState } from 'react'
-import Home from './sections/Home'
-import About from './sections/About' 
-import Domain from './sections/Domain'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from './sections/Home';
+import About from './sections/About';
+import Domain from './sections/Domain';
+import SignIn from "../auth/signIn";
+  // Import with PascalCase
+
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      {/* Hero Section */}
-      <section id="hero" className="min-h-screen">
-        <Home />
-      </section>
+    <Router>
+      <div className="App">
 
-      {/* About Section */}
-      <section id="about" className="min-h-screen">
-        <About />
-      </section>
+        {/* Navigation */}
+        <nav>
+          <Link to="/signin"></Link> {/* Router link */}
+        </nav>
 
-      
-      {/* Domain Section */}
-      <section id="about" className="min-h-screen">
-        <Domain />
-      </section>
-    </div>
+        <Routes>
+          {/* Landing page with sections */}
+          <Route
+            path="/"
+            element={
+              <>
+                {/* Hero Section */}
+                <section id="hero" className="min-h-screen">
+                  <Home />
+                </section>
+
+                {/* About Section */}
+                <section id="about" className="min-h-screen">
+                  <About />
+                </section>
+
+                {/* Domain Section */}
+                <section id="domain" className="min-h-screen">
+                  <Domain />
+                </section>
+              </>
+            }
+          />
+
+          {/* Sign In page */}
+          <Route path="/signin" element={<SignIn />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
-export default App
+export default App;
