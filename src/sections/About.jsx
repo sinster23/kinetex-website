@@ -250,7 +250,7 @@ const About = () => {
   const visibleCards = getVisibleCards();
 
   return (
-    <div ref={sectionRef} className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-indigo-900 relative overflow-hidden py-24">
+    <div ref={sectionRef} className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-orange-900 relative overflow-hidden py-24">
       {/* Enhanced Floating Particles */}
       <FloatingParticles />
       

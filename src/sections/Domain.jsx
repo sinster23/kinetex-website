@@ -550,7 +550,7 @@ const KineTechDomains = () => {
   const currentDomains = activeTab === "tech" ? techDomains : nonTechDomains;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-orange-900 py-20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black py-20 relative overflow-hidden">
       {/* Animated background with parallax */}
       <motion.div
         className="absolute inset-0 opacity-20"
@@ -775,7 +775,7 @@ const KineTechDomains = () => {
             viewport={{ once: true }}
           >
             <motion.button
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl text-md font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl text-sm font-semibold"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(249, 115, 22, 0.5)",
@@ -790,7 +790,7 @@ const KineTechDomains = () => {
               Apply Now
             </motion.button>
             <motion.button
-              className="border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl text-md font-semibold transition-colors duration-300"
+              className="border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl text-sm font-semibold transition-colors duration-300"
               whileHover={{
                 scale: 1.05,
                 y: -2,
